@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="triangle" class="org.ap.Triangle">
+	<!--	<property name="type" value="Equilateral"/> --> <!-- setter injection -->
+		<constructor-arg index="0" value="Equilateral"/> <!-- constructor injection -->
+		<constructor-arg index="1" value="20"  type="int"/>
+	</bean>
+	
+	<bean id="triangle2" class="org.ap.Triangle2">
+		<property name="pointA"  ref="zeroPoint"/>
+		<property name="pointB"   ref="point2"/>
+		<property name="pointC"   ref="point3"/>
+	</bean>
+	
+	<bean id="zeroPoint" class="org.ap.Point">
+		<property name="x" value="0"/> <!-- setter injection -->
+		<property name="y"  value="0"/>
+	</bean>
+	
+	<bean id="point2" class="org.ap.Point">
+		<property name="x" value="-20"/> <!-- setter injection -->
+		<property name="y"  value="0"/>
+	</bean>
+	
+	<bean id="point3" class="org.ap.Point">
+		<property name="x" value="20"/> <!-- setter injection -->
+		<property name="y"  value="0"/>
+	</bean>
+	
+</beans>
